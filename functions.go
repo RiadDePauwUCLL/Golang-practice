@@ -23,7 +23,7 @@ func circleArea(r float64) float64 { // Function that returns a float64, takes a
 	return math.Pi * r * r
 }
 
-func main() {
+func functions() {
 
 	// Call the functions
 	// sayHello("mario")
