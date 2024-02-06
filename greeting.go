@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func main() {
+func greeting() {
 	greeting := "Hey winner"
 
 	// examples
