@@ -4,7 +4,7 @@ import "fmt"
 
 var score = 100
 
-func main() {
+func packagescope() {
 
 	sayHi("mario")
 
