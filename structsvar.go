@@ -32,10 +32,23 @@ func (b bill) format() string {
 		total += v
 	}
 
+	// add tip
+	fs += fmt.Sprintf("%-15v ...$%0.2f \n", "tip:", b.tip)
+
 	// total
-	fs += fmt.Sprintf("%-15v ...$%0.2f", "total:", total)
+	fs += fmt.Sprintf("%-15v ...$%0.2f", "total:", total+b.tip)
 
 	return fs
+}
+
+// update tip
+func (b *bill) updateTip(tip float64) {
+	(*b).tip = tip
+}
+
+// add an item to the bill
+func (b bill) addItem(name string, price float64) {
+	b.items[name] = price
 }
 
 type Person struct {
@@ -43,7 +56,7 @@ type Person struct {
 	Age  int
 }
 
-func structs() {
+func structsvar() {
 	p := Person{Name: "Tommy", Age: 25}
 
 	fmt.Println(p.Name)
