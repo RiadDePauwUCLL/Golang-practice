@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 // Structs are a way to create custom types, aka classes like in Python.
 
@@ -61,4 +64,16 @@ func structsvar() {
 
 	fmt.Println(p.Name)
 	fmt.Println(p.Age)
+}
+
+// save bill
+
+func (b *bill) save() {
+	data := []byte(b.format())
+
+	err := os.WriteFile("bills/"+b.name+".txt", data, 0644) // 0644 is the permission
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Bill was saved to file")
 }
