@@ -76,7 +76,7 @@ func promptOptions(b bill) {
 	// fmt.Println(opt)
 }
 
-func main() {
+func userinput() {
 	mybill := createBill()
 	promptOptions(mybill)
 
